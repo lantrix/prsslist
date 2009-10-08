@@ -594,9 +594,8 @@ See Software License in the program file.
 
 SOFTWARE LICENSE
 
-This software and documentation is
-Copyright (c) 2004, 2005 Software Garden, Inc.
-All rights reserved. 
+Original software (c) Copyright 2004, 2005 Software Garden, Inc. All Rights Reserved.
+pRSSlist Copyright (c) 2009, lantrix, TechDebug.com
 
 1. The source code of this program is made available as free software;
 you can redistribute it and/or modify it under the terms of the GNU
