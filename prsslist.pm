@@ -3058,7 +3058,7 @@ EOF
 <tr><td>
 <div class="footer">
 $time_string<br><br>
-pRSSlist Copyright (c) 2009, lantrix, TechDebug.com
+pRSSlist Copyright (c) 2009, lantrix, <a href="http://techdebug.com>TechDebug</a>
 <br>Original Software (c) Copyright 2004, 2005 <a href="http://www.softwaregarden.com">Software Garden</a>, Inc. All Rights Reserved.
 EOF
 
