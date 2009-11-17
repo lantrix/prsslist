@@ -34,11 +34,11 @@ our $VERSION = '1.00';
 our $sgilicensetext = <<"EOF";
 <b>SOFTWARE LICENSE</b>
 <br><br>
+pRSSlist Copyright (c) 2009, lantrix, TechDebug.com<br>
+<br><br>
 Original software and documentation is<br>
 Copyright (c) 2004, 2005 Software Garden, Inc.<br>
 All rights reserved.<br>
-<br><br>
-pRSSlist Copyright (c) 2009, lantrix, TechDebug.com<br>
 <br><br>
 1. The source code of this program is made available as free software;
 you can redistribute it and/or modify it under the terms of the GNU
