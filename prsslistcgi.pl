@@ -7,7 +7,7 @@
 #
 
 #
-# ListGarden RSS Generator Program
+# prsslist RSS Generator Program
 #
 # This is the interface for using the program
 # through a normal web server.
@@ -18,7 +18,7 @@
 
    use strict;
 
-   use ListGarden;
+   use pRSSlist;
 
    use CGI::Carp qw(fatalsToBrowser);
 
@@ -66,15 +66,16 @@ __END__
 
 =head1 NAME
 
-listgardencgi.pl
+prsslistcgi.pl
 
 =head1 VERSION
 
-This is listgardencgi.pl v1.0.
+This is prsslistcgi.pl v2.0.
 
 =head1 AUTHOR
 
-Dan Bricklin, Software Garden, Inc.
+Originally authored by Dan Bricklin, Software Garden, Inc.
+pRSSlist author lantrix, Techdebug.com
 
 =head1 COPYRIGHT
 
@@ -88,13 +89,8 @@ See Software License in the program file.
 #
 # HISTORY
 #
-# Version 1.3
-# $Date: 2005/08/04 18:04:44 $
-# $Revision: 1.14 $
-#
-# Version 1.00 24 Jun 2004 15:15 EDT
-#   Dan Bricklin, Software Garden, Inc. (http://www.softwaregarden.com/)
-#   -Intitial version
+# Version 2.0 17 Nov 2009
+#   Created inital version of pRSSlist from ListGarden
 #
 #
 # TODO:

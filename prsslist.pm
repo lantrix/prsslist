@@ -7,11 +7,10 @@
 #
 
 #
-# ListGarden RSS Generator Program
+# prsslist RSS Generator Program
 #
 # This is the main software for running the program.
-# It is called by listgarden.pl, listgardencgi.pl,
-# and listgardenwin.pl.
+# It is called by prsslist.pl, prsslistcgi.pl.
 #
 # Use the interface program appropriate to your needs.
 #
@@ -27,7 +26,7 @@
 # Export symbols
 #
 
-package ListGarden;
+package pRSSlist;
 
 require Exporter;
 our @ISA = qw(Exporter);
@@ -40,7 +39,7 @@ our $VERSION = '1.3.1';
 #
 # # # # # # # # # #
 
-our $programname = "ListGarden Program 1.3.1";
+our $programname = "pRSSlist Program 1.3.1";
 
 my @itemtags = qw(itemtitle itemlink itemdesc itempubdate itemguid itemguidispermalink itemdeschtml
                   itemenclosureurl itemenclosurelength itemenclosuretype itemaddlxml); # item field names
@@ -3220,15 +3219,16 @@ __END__
 
 =head1 NAME
 
-ListGarden.pm
+prsslist.pm
 
 =head1 VERSION
 
-This is ListGarden.pm v1.3.1.
+This is prsslist.pm v2.0.
 
 =head1 AUTHOR
 
-Dan Bricklin, Software Garden, Inc.
+Originally authored by Dan Bricklin, Software Garden, Inc.
+pRSSlist author lantrix, Techdebug.com
 
 =head1 COPYRIGHT
 
@@ -3242,66 +3242,8 @@ See Software License in the program file.
 #
 # HISTORY
 #
-# Version 1.3
-# $Date: 2005/08/04 18:04:44 $
-# $Revision: 1.14 $
-#
-# Version 1.3.1 2 Aug 2005 9:50 EDT
-#   Fixed some bugs with missing {{name}}'s in HTML output
-#   Cleaned up comments about {{name}}'s
-#   Added {{itemenclosureurlraw}}
-#
-# Version 1.3Beta2 31 Jul 2005 15:44 EDT
-#   Added Load Feed Setting From URL functionality
-#
-# Version 1.3Beta2 30 Jul 2005 20:41 EDT
-#   Added enclosure Get Info and auto type retrieval
-#   Changed Description Template to textarea
-#   Added expand_desc with all non-HTML mode plus:
-#   {{amp}}, {{lt}}, {{gt}}, {{quot}}, {{lbracket}}, {{rbracket}}, {{lbrace}}
-#
-# Version 1.3Beta1 27 Jul 2005 16:15 EDT
-#   Added enclosures to the list of item elements
-#   Added ability to browse for enclosure information,
-#    including FTP URL, directory, user, password, and prefix
-#   Added the Backup Data feature to publishing, both by FTP and local,
-#    single and multiple file, with and without password saving
-#   Added Item Additional XML
-#   Added RSS Tag Additional Text
-#   Fixed GUID creation to use months starting with 1, not 0
-#   Added GUID radio buttons to Edit Item
-#   Upgraded non-HTML mode of item description to create HTML:
-#    Line breaks preserved as <br>, [b:bold text], [i:italic text],
-#    [quote:block quote text], and [http://some.url link text]
-#   Upgraded displayed doc for HTML Template For Each Item to
-#    refer to other variables and added enclosure values
-#   Added better FTP progress messages and fixed spurious error report
-#
-# Version 1.02 21 Sep 2004 16:17 EDT
-#   File::Glob removed (not in enough distributions) and
-#   spaces in datafile pathname are wildcarded with ? instead
-#   of exact match
-#
-# Version 1.02 20 Sep 2004 17:01 EDT
-#   Added Channel Additional XML (channeladdlxml) feature
-#
-# Version 1.02 20 Sep 2004 15:18 EDT
-#   Added File::Glob to handle pathnames with spaces
-#
-# Version 1.02 8 Jul 2004 16:03 EDT
-#   Moved <script> tags to after target defined for cleanliness
-#
-# Version 1.01 7 Jul 2004 11:50 EDT
-#   Multiple forms and button reordering to fix "text and Enter" problem
-#   Better browser compatibility with DOCTYPE and CSS tweaks
-#   Clean up HTML in various places to look better
-#   UTF-8 BOM handling
-#   When no feeds, focus is put in Create text field
-#   Handle text in numeric fields better
-#
-# Version 1.00 28 Jun 2004 22:35 EDT
-#   Dan Bricklin, Software Garden, Inc. (http://www.softwaregarden.com/)
-#   -Intitial version
+# Version 2.0 17 Nov 2009
+#   Created inital version of pRSSlist from ListGarden
 #
 #
 # TODO:

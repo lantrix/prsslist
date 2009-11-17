@@ -7,7 +7,7 @@
 #
 
 #
-# ListGarden RSS Generator Program
+# prsslist RSS Generator Program
 #
 # This is the interface for using the program
 # by doing local HTTP serving
@@ -18,7 +18,7 @@
 
    use strict;
 
-   use ListGarden;
+   use pRSSlist;
 
    use URI;
    use HTTP::Daemon;
@@ -162,20 +162,21 @@ __END__
 
 =head1 NAME
 
-listgarden.pl
+prsslist.pl
 
 =head1 VERSION
 
-This is listgarden.pl v1.02.
+This is prsslist.pl v2.0.
 
 =head1 AUTHOR
 
-Dan Bricklin, Software Garden, Inc.
+Originally authored by Dan Bricklin, Software Garden, Inc.
+pRSSlist author lantrix, Techdebug.com
 
 =head1 COPYRIGHT
 
-(c) Copyright 2004, 2005 Software Garden, Inc.
-All Rights Reserved.
+Original Software (c) Copyright 2004, 2005 Software Garden, Inc. All Rights Reserved.
+pRSSlist Copyright (c) 2009, lantrix, TechDebug.com
 
 See Software License in the program file.
 
@@ -184,16 +185,8 @@ See Software License in the program file.
 #
 # HISTORY
 #
-# Version 1.3
-# $Date: 2005/08/04 18:04:44 $
-# $Revision: 1.14 $
-#
-# Version 1.02 20 Sep 2004 15:23 EDT
-#   Added check to ignore favicon.ico requests to fix problem with Firefox 1.0PR
-#
-# Version 1.00 25 Jun 2004 15:05 EDT
-#   Dan Bricklin, Software Garden, Inc. (http://www.softwaregarden.com/)
-#   -Intitial version
+# Version 2.0 17 Nov 2009
+#   Created inital version of pRSSlist from ListGarden
 #
 #
 # TODO:

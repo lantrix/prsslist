@@ -556,11 +556,12 @@ prsslistLicense.pm
 
 =head1 VERSION
 
-This is prsslistLicense.pm v1.0.
+This is prsslistLicense.pm v2.0.
 
 =head1 AUTHOR
 
-Dan Bricklin, Software Garden, Inc.
+Originally authored by Dan Bricklin, Software Garden, Inc.
+pRSSlist author lantrix, Techdebug.com
 
 =head1 COPYRIGHT
 
@@ -574,16 +575,8 @@ See Software License in the program file.
 #
 # HISTORY
 #
-# Version 1.3
-# $Date: 2005/08/04 18:04:44 $
-# $Revision: 1.14 $
-#
-# Version 1.3 28 Jul 2005 10:37 EDT
-#   Updated to revised, more GPL friendly, license
-#
-# Version 1.00 10 Jun 2004 17:19 EDT
-#   Dan Bricklin, Software Garden, Inc. (http://www.softwaregarden.com/)
-#   -Intitial version
+# Version 2.0 17 Nov 2009
+#   Created inital version of pRSSlist from ListGarden
 #
 #
 # TODO:
