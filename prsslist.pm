@@ -3058,11 +3058,8 @@ EOF
 <tr><td>
 <div class="footer">
 $time_string<br><br>
-(c) Copyright 2004, 2005 Software Garden, Inc.
-<br>All Rights Reserved.
-<br>Garden is a registered trademark of Software Garden, Inc.
-<br>ListGarden is a trademark of Software Garden, Inc.
-<br>The original version of this program is from <a href="http://www.softwaregarden.com">Software Garden</a>.
+pRSSlist Copyright (c) 2009, lantrix, TechDebug.com
+<br>Original Software (c) Copyright 2004, 2005 <a href="http://www.softwaregarden.com">Software Garden</a>, Inc. All Rights Reserved.
 EOF
 
    $response .= <<"EOF";
