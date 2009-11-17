@@ -39,7 +39,7 @@ our $VERSION = '1.3.1';
 #
 # # # # # # # # # #
 
-our $programname = "pRSSlist Program 1.3.1";
+our $programname = "pRSSlist Program 2.0";
 
 my @itemtags = qw(itemtitle itemlink itemdesc itempubdate itemguid itemguidispermalink itemdeschtml
                   itemenclosureurl itemenclosurelength itemenclosuretype itemaddlxml); # item field names
