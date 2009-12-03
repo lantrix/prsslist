@@ -284,7 +284,7 @@ body {font-family:verdana,helvetica,sans-serif;}
 </head>
 <body>
 <div class="above">
- <b>Contents of RSS feed for:</b><br><br>
+ <b>Contents of RSS feed for:</b><br/><br/>
  <div class="rsstitle"><a href="{{rsslink}}">{{rsstitle}}</a></div>
  <div class="rssdesc">{{rssdesc}}</div>
 </div>
@@ -302,7 +302,7 @@ my $defaulthtmlbelow = <<"EOF";
 <div class="below">
  <div class="rsspubdate">Updated: {{rsspubdate}}</div>
  <div class="note">
-  The URL to provide to an RSS aggregator when subscribing to this feed: <a href="{{rssfileurlraw}}">{{rssfileurl}}</a><br>
+  The URL to provide to an RSS aggregator when subscribing to this feed: <a href="{{rssfileurlraw}}">{{rssfileurl}}</a><br/>
   (For more information about RSS see: <a href="http://rss.softwaregarden.com/aboutrss.html">What is RSS?</a>.)
  </div>
 </div>
@@ -505,7 +505,7 @@ EOF
 
    $response .= <<"EOF";
 <b>$programname</b>
-<br><br>
+<br/><br/>
 <form name="f0" action="" method="POST">
 <input type="hidden" name="securitycode" value="$securitycode">
 <input type="hidden" name="currenttab" value="$currenttab">
@@ -898,7 +898,7 @@ EOF
             my $valnamesc = special_chars($valname);
             $val =~ s/\\(\\|n|r)/$tc{$1}/eg;
             my $valsc = special_chars($val);
-            $valsc =~ s/\n/<br>/g;
+            $valsc =~ s/\n/<br/>/g;
             if ($loadablevalues{$valname}) {
                $loadfeedsettingsstr .= "<tr><td><b>$valnamesc:&nbsp;</b></td><td>$valsc</td></tr>";
                $datavalues{$valname} = $val; # overwrite with new value
@@ -923,7 +923,7 @@ EOF
       else {
          my $emsg = special_chars($res->status_line);
          $loadfeedsettingsstr .= <<"EOF";
-<div class="itemdesc"><span class="warning"><b>Unable to load:</b></span><br>$emsg</div>
+<div class="itemdesc"><span class="warning"><b>Unable to load:</b></span><br/>$emsg</div>
 EOF
          }
 
@@ -1085,7 +1085,7 @@ Example: http://www.aardvarkproject.com
 <div class="desc">
 Phrase or sentence describing the channel.
 </div>
-<br>
+<br/>
 <input name="savefeededit" type="submit" value="Save">
 <input name="cancelfeededit" type="submit" value="Cancel">
 </form>
@@ -1099,7 +1099,7 @@ EOF
 
       elsif ($config_values{feedname}) {
          my $descbr = $htmlvalue{rssdesc};
-         $descbr =~ s/\n/<br>/g;
+         $descbr =~ s/\n/<br/>/g;
 
          my $missingmsg1 = qq! <span class="warning">The required value for!;
          my $missingmsg2 = qq!is missing. Use Edit to correct.</span>!;
@@ -1132,7 +1132,7 @@ EOF
       if (!$params{editfeedinfo}) {
          $response .= <<"EOF";
 </div>
-<br>
+<br/>
 <form name="f3" action="" method="POST">
 <input type="hidden" name="securitycode" value="$securitycode">
 <input type="hidden" name="currenttab" value="$currenttab">
@@ -1143,7 +1143,7 @@ EOF
 <input name="createfeed" type="submit" value="Create">
 <div class="desc">
 1-10 characters, alphabetic and numeric only, no spaces or special characters
-<br><br>This name is used as part of a filename for saving information about
+<br/><br/>This name is used as part of a filename for saving information about
 the feed on your system while editing.
 It is not used as part of the feed itself when loaded onto a server.
 Use a short name that helps you distinguish this feed from any any others you create.
@@ -1152,7 +1152,7 @@ Later you can use the Publish screen to specify the filename on the server.
 </div>
 </div>
 </form>
-<br>
+<br/>
 EOF
          if (!$config_values{feedname}) {
             $response .= <<"EOF";
@@ -1180,7 +1180,7 @@ $feedlist2
 onclick="return window.confirm('Delete this feed?')">
 </div>
 </form>
-<br>
+<br/>
 EOF
          }
 
@@ -1261,11 +1261,11 @@ Title, Description, or both must be present.
 <input name="edititemlink" type="text" size="60" value="$htmlvalue{edititemlink}">
 <div class="desc">
 The URL of the item.
-<br>(Optional)
+<br/>(Optional)
 </div>
 <div class="title">Description</div>
 <textarea name="edititemdesc" rows="$htmlvalue{desclines}" cols="60" wrap="virtual">$htmlvalue{edititemdesc}</textarea>
-<br><input name="edititemdeschtml" type="checkbox" value="CHECKED" $htmlvalue{edititemdeschtml}><span class="smallprompt">Includes HTML</span>
+<br/><input name="edititemdeschtml" type="checkbox" value="CHECKED" $htmlvalue{edititemdeschtml}><span class="smallprompt">Includes HTML</span>
 <div class="desc">
 The text of the item, or a synopsis.
 If the box is checked, HTML code in the description controls the text displayed.
@@ -1277,7 +1277,7 @@ and [http://some.url Some text] will be made into a link.
 <div class="title">Enclosure</div>
 <input name="edititemenclosureurl" type="text" size="60" value="$htmlvalue{edititemenclosureurl}">
 <span class="smallprompt">URL</span>
-<br>
+<br/>
 <input class="small" name="browseenclosure" type="submit" value="Browse"> &nbsp;
 <input name="edititemenclosurelength" type="text" size="9" value="$htmlvalue{edititemenclosurelength}">
 <span class="smallprompt">Length</span> &nbsp;
@@ -1294,21 +1294,21 @@ The Browse button lets you choose from a list of files already on a server and a
 get the URL, length, and type.
 If you type in a URL directly, the Get Info button lets you query the server for the file length and type.
 (Optional, but if the Enclosure URL is non-blank then the Length and Type must also be present.
-If the URL is blank then the Length and Type are ignored.)<br>
+If the URL is blank then the Length and Type are ignored.)<br/>
 Example: http://www.domain.com/podcast/show15.mp3
 </div>
 <div class="title">PubDate</div>
 <input name="edititempubdate" type="text" size="60" value="$htmlvalue{edititempubdate}">
-<br><input name="edititempubdateusecurrent" type="checkbox" value="1"$usecurrent><span class="smallprompt">Set to current time</span>
+<br/><input name="edititempubdateusecurrent" type="checkbox" value="1"$usecurrent><span class="smallprompt">Set to current time</span>
 <div class="desc">
 The date/time when the item was published.
 If the box is checked, the current time will be used when you press "Save".
-The format must be: "Day, monthday Month year hour:min:sec GMT",<br>(e.g., Wed, 08 Oct 2003 19:29:11 GMT)
-<br>(Optional)
+The format must be: "Day, monthday Month year hour:min:sec GMT",<br/>(e.g., Wed, 08 Oct 2003 19:29:11 GMT)
+<br/>(Optional)
 </div>
 <div class="title">GUID</div>
-<input name="edititemguid" type="text" size="60" value="$htmlvalue{edititemguid}"><br>
-<input name="edititemguidispermalink" type="checkbox" value="CHECKED" $htmlvalue{edititemguidispermalink}><span class="smallprompt">isPermaLink</span><br>
+<input name="edititemguid" type="text" size="60" value="$htmlvalue{edititemguid}"><br/>
+<input name="edititemguidispermalink" type="checkbox" value="CHECKED" $htmlvalue{edititemguidispermalink}><span class="smallprompt">isPermaLink</span><br/>
 <span class="smallprompt"><b>If blank:</b></span> <input name="edititemguidauto" type="radio" value="link"$guidautolink><span class="smallprompt">Set to link</span>
 &nbsp; <input name="edititemguidauto" type="radio" value="auto"$guidautoauto><span class="smallprompt">Create</span>
 &nbsp; <input name="edititemguidauto" type="radio" value="none"$guidautonone><span class="smallprompt">Leave blank</span>
@@ -1318,7 +1318,7 @@ If "isPermLink" is checked, then readers can assume that the GUID value is a URL
 that is a permanent link to the item.
 If the GUID text box is left blank you can have a GUID automatically assigned based upon the current date/time
 or have the current value of the Link field copied using the radio buttons.
-<br>(Optional)
+<br/>(Optional)
 </div>
 <div class="title">Item Additional XML</div>
 <textarea name="edititemaddlxml" rows="4" cols="60" wrap="virtual">$htmlvalue{edititemaddlxml}</textarea>
@@ -1330,7 +1330,7 @@ and namespace-specific elements (such as Apple iTunes' &lt;itunes:keywords&gt;) 
 currently supported by this program.
 (You may want to indent the tags with three spaces to line up this XML with the other Item elements in the final XML output.)
 </div>
-<br>
+<br/>
 <input name="saveitem" type="submit" value="Save">
 <input name="saveitemcancel" type="submit" value="Cancel">
 <input name="listitemnum" type="hidden" value="$params{listitemnum}">
@@ -1386,14 +1386,14 @@ The title of the item.
 <input name="newitemlink" type="text" size="60" value="$htmlvalue{newitemlink}">
 <div class="desc">
 The URL of the item.
-<br>(Optional)
+<br/>(Optional)
 </div>
 <div class="title">Description</div>
 <textarea name="newitemdesc" rows="$htmlvalue{desclines}" cols="60" wrap="virtual">$htmlvalue{newitemdesc}</textarea>
-<br><input name="newitemdeschtml" type="checkbox" value="CHECKED" $htmlvalue{newitemdeschtml}><span class="smallprompt">Includes HTML</span>
+<br/><input name="newitemdeschtml" type="checkbox" value="CHECKED" $htmlvalue{newitemdeschtml}><span class="smallprompt">Includes HTML</span>
 <div class="desc">
-The text of the item, or a synopsis.<br>
-If the box is checked, HTML code in the description controls the text displayed.<br>
+The text of the item, or a synopsis.<br/>
+If the box is checked, HTML code in the description controls the text displayed.<br/>
 If the box is unchecked, then the characters '&amp;', '&lt;', '&gt;', and '"' will be esacaped and display as themselves
 and explicit line breaks (carriage returns) will be shown as line breaks, [b:some text] will be shown in <b>bold</b>,
 [i:text] will be shown in <i>italic</i>, [quote:lots of text] will be shown indented,
@@ -1402,7 +1402,7 @@ You can insert special characters unescaped with {{amp}}, {{lt}}, {{gt}}, {{quot
 </div>
 <div class="title">Enclosure</div>
 <input name="newitemenclosureurl" type="text" size="60" value="$htmlvalue{newitemenclosureurl}">
-<span class="smallprompt">URL</span><br>
+<span class="smallprompt">URL</span><br/>
 <input class="small" name="browseenclosure" type="submit" value="Browse"> &nbsp;
 <input name="newitemenclosurelength" type="text" size="9" value="$htmlvalue{newitemenclosurelength}">
 <span class="smallprompt">Length</span> &nbsp;
@@ -1419,23 +1419,23 @@ The Browse button lets you choose from a list of files already on a server and a
 get the URL, length, and type.
 If you type in a URL directly, the Get Info button lets you query the server for the file length and type.
 (Optional, but if the Enclosure URL is non-blank then the Length and Type must also be present.
-If the URL is blank then the Length and Type are ignored.)<br>
+If the URL is blank then the Length and Type are ignored.)<br/>
 Example: http://www.domain.com/podcast/show15.mp3
 </div>
 <div class="title">PubDate</div>
 <input name="newitempubdate" type="text" size="60" value="$htmlvalue{newitempubdate}">
-<br><input name="newitempubdateusecurrent" type="checkbox" value="1"$pubdateusecurrent><span class="smallprompt">Set to current time</span>
+<br/><input name="newitempubdateusecurrent" type="checkbox" value="1"$pubdateusecurrent><span class="smallprompt">Set to current time</span>
 <div class="desc">
 The date/time when the item was published.
 If the box is checked, the current time will be used when you press "Save".
-The format must be: "Day, monthday Month year hour:min:sec GMT",<br>(e.g., Wed, 08 Oct 2003 19:29:11 GMT)
-<br>(Optional)
+The format must be: "Day, monthday Month year hour:min:sec GMT",<br/>(e.g., Wed, 08 Oct 2003 19:29:11 GMT)
+<br/>(Optional)
 </div>
 <div class="title">GUID</div>
 <input name="newitemguid" type="text" size="60" value="$htmlvalue{newitemguid}">
-<br>
+<br/>
 <input name="newitemguidispermalink" type="checkbox" value="CHECKED" $htmlvalue{newitemguidispermalink}><span class="smallprompt">isPermaLink</span>
-<br>
+<br/>
 <span class="smallprompt"><b>If blank:</b></span> <input name="newitemguidauto" type="radio" value="link"$guidradiolink><span class="smallprompt">Set to link</span>
 &nbsp; <input name="newitemguidauto" type="radio" value="auto"$guidradioauto><span class="smallprompt">Create</span>
 &nbsp; <input name="newitemguidauto" type="radio" value="none"$guidradionone><span class="smallprompt">Leave blank</span>
@@ -1445,7 +1445,7 @@ If "isPermLink" is checked, then readers can assume that the GUID value is a URL
 that is a permanent link to the item.
 If the GUID text box is left blank you can have a GUID automatically assigned based upon the current date/time
 or have the current value of the Link field copied using the radio buttons.
-<br>(Optional)
+<br/>(Optional)
 </div>
 <div class="title">Item Additional XML</div>
 <textarea name="newitemaddlxml" rows="4" cols="60" wrap="virtual">$htmlvalue{newitemaddlxml}</textarea>
@@ -1457,12 +1457,12 @@ and namespace-specific elements (such as Apple iTunes' &lt;itunes:keywords&gt;) 
 currently supported by this program.
 (You may want to indent the tags with three spaces to line up this XML with the other Item elements in the final XML output.)
 </div>
-<br>
+<br/>
 <input name="addone" type="submit" value="Add Item">
 <input name="addonepublish" type="submit" value="Add & Publish">
 <input name="addonecancel" type="submit" value="Cancel">
 <input name="listitemnum" type="hidden" value="$params{listitemnum}">
-<br><br>
+<br/><br/>
 <div class="desc">
 <i><b>Note:</b> To make adding new items less tedious,
 default values for each of the fields may be set using the Options Template settings.
@@ -1515,13 +1515,13 @@ EOF
             my $modified = localtime($res->last_modified);
 
             $response .= <<"EOF";
-<br>
+<br/>
 <div class="sectiondark">
 <div class="title">INFORMATION RETRIEVED FROM WEB SERVER:</div>
-<div class="itemlink"><b>URL:</b><br>$url<br><br>
-<b>Last modified:</b><br>$modified<br><br>
-<b>Content Length:</b><br>$contentlength bytes<br><br>
-<b>Content Type:</b><br>$contenttype<br><br>
+<div class="itemlink"><b>URL:</b><br/>$url<br/><br/>
+<b>Last modified:</b><br/>$modified<br/><br/>
+<b>Content Length:</b><br/>$contentlength bytes<br/><br/>
+<b>Content Type:</b><br/>$contenttype<br/><br/>
 </div>
 <div class="desc">
 The values above are what the web server returns when you request information about that URL.
@@ -1530,7 +1530,7 @@ If you press the "Save" button below, the Length and Type values will be used fo
 <input name="browsefilenames" type="hidden" value="$contenttype\@$contentlength|">
 <input name="browsecontinue$params{browsecontinuetype}1i" type="submit" value="Save">
 </div>
-<br>
+<br/>
 <script>
 <!--
 var setf = function() {document.f1.browsecontinue$params{browsecontinuetype}1i.focus();}
@@ -1541,19 +1541,19 @@ EOF
          else {
             my $emsg = special_chars($res->status_line);
             $response .= <<"EOF";
-<br>
+<br/>
 <div class="sectiondark">
 <div class="title">UNABLE TO RETRIEVE INFORMATION FROM WEB SERVER:</div>
-<div class="itemlink"><b>URL:</b><br>$url<br><br>
-<b>Error:</b><br>
+<div class="itemlink"><b>URL:</b><br/>$url<br/><br/>
+<b>Error:</b><br/>
 <span class="warning">$emsg</span>
-<br><br>
+<br/><br/>
 </div>
 <div class="desc">
 The values for Length and Type will not be changed.
 </div>
 <input name="browsecontinue$params{browsecontinuetype}0" type="submit" value="OK">
-<br>
+<br/>
 <script>
 <!--
 var setf = function() {document.f1.browsecontinue$params{browsecontinuetype}0[1].focus();}
@@ -1630,11 +1630,11 @@ EOF
 EOF
             if (!$ok) {
                my $msgsc = special_chars($ftp->message);
-               $response .= qq!<span class="warning">Unable to access information by FTP.<br>Error status: $msgsc.</span><br><br>!;
+               $response .= qq!<span class="warning">Unable to access information by FTP.<br/>Error status: $msgsc.</span><br/><br/>!;
                }
             else {
                $response .= <<"EOF";
-<br><table>
+<br/><table>
 <tr><td>&nbsp;</td><td class="browsecolumnhead">NAME&nbsp;</td><td class="browsecolumnhead">SIZE&nbsp;</td><td class="browsecolumnhead">DATE&nbsp;</td></tr>
 $filetable
 </table>
@@ -1649,7 +1649,7 @@ EOF
             $msgsc = <<"EOF" unless $datavalues{browseftpurl};
 FTP URL not set. Please provide the values below and then press the "Update Browse Values" button.
 EOF
-            $response .= qq!<span class="warning"><br>Unable to access information by FTP.<br><br>Error status: $msgsc.</span><br><br>!;
+            $response .= qq!<span class="warning"><br/>Unable to access information by FTP.<br/><br/>Error status: $msgsc.</span><br/><br/>!;
             }
 
          foreach my $p (keys %params) {  # go through all the parameters and repeat those we want to propagate
@@ -1672,7 +1672,7 @@ EOF
 <div class="desc">
 The URL of the FTP host to browse.
 This is where you want to browse, which may be a different server than where the RSS file(s) will go.
-<br>Example: ftp.domain.com
+<br/>Example: ftp.domain.com
 </div>
 <div class="title">FTP Directory</div>
 <input name="editbrowseftpdirectory" type="text" size="60" value="$htmlvalue{browseftpdirectory}">
@@ -1682,13 +1682,13 @@ Note that only files are listed.
 To change directories, change the value here.
 It is assumed that you normally use this browse capability to find a recent addition
 to a directory to use as an enclosure (e.g, the latest podcast MP3 file).
-<br>Example: htdocs
+<br/>Example: htdocs
 </div>
 <div class="title">FTP User</div>
 <input name="editbrowseftpuser" type="text" size="60" value="$htmlvalue{browseftpuser}">
 <div class="desc">
 The username to use when logging into the FTP server to browse.
-<br>Example: jsmith
+<br/>Example: jsmith
 </div>
 <div class="title">FTP Password</div>
 <input name="editbrowseftppassword" type="password" size="60" value="$pwplaceholder">
@@ -1702,11 +1702,11 @@ When a file is selected, this prefix is used to create a URL.
 It is needed to allow this program to then query the file's server for the Type value and to avoid needing to enter this prefix
 each time after you select a file. (The other Browse information does not provide enough information to specify a URL.)
 (You can also use the Options Item Enclosure Type Template to provide recurring values for the enclosure Type field.)
-<br>For example, http://www.domain.com/mp3/
+<br/>For example, http://www.domain.com/mp3/
 </div>
 <input name="changebrowse" type="submit" value="Update Browse Values">
 </div>
-<br>
+<br/>
 <script>
 <!--
 var setf = function() {document.f1.browsecontinue$params{browsecontinuetype}0.focus();}
@@ -1781,7 +1781,7 @@ EOF
          $response .= <<"EOF";
 $pagenav
 <input name="listitemnum" type="hidden" value="$params{listitemnum}">
-<br><br>
+<br/><br/>
 EOF
 
          # Determine publish order
@@ -1827,7 +1827,7 @@ EOF
                $descbr = expand_desc($descbr);
                }
             my $guidispermalink = $datavalues{"itemguidispermalink$i"} ? " (perm)" : "";
-            $htmlv{"itemaddlxml$i"} =~ s/\n/<br>&nbsp;&nbsp;/g;
+            $htmlv{"itemaddlxml$i"} =~ s/\n/<br/>&nbsp;&nbsp;/g;
 
             # Apply maximum items published and minimum time to publish criteria
 
@@ -1878,20 +1878,20 @@ EOF
 
             $response .= <<"EOF" if (($datavalues{displayenclosure} && $datavalues{"itemenclosureurl$i"}) || ($datavalues{"itemenclosureurl$i"} && (!defined $datavalues{displayenclosure})));
 <div class="itemlink">Enclosure  ($htmlv{"itemenclosurelength$i"} bytes, $htmlv{"itemenclosuretype$i"}):
-<br><a href="$datavalues{"itemenclosureurl$i"}" target="_blank">$htmlv{"itemenclosureurl$i"}</a></div>
+<br/><a href="$datavalues{"itemenclosureurl$i"}" target="_blank">$htmlv{"itemenclosureurl$i"}</a></div>
 EOF
 
             $response .= <<"EOF" if ($datavalues{"itemguid$i"} && ($datavalues{displayguid} || !defined $datavalues{displayguid}));
 <div class="itemmisc">GUID: $htmlv{"itemguid$i"}$guidispermalink</div>
 EOF
             $response .= <<"EOF" if ($datavalues{"itemaddlxml$i"});
-<div class="itemmisc">Additional XML:<br>&nbsp;&nbsp;$htmlv{"itemaddlxml$i"}</div>
+<div class="itemmisc">Additional XML:<br/>&nbsp;&nbsp;$htmlv{"itemaddlxml$i"}</div>
 EOF
             }
          $response .= <<"EOF";
-<br><span class="smallprompt">Only <span class="selectedexample">highlighted items</span> are included in the published data.
+<br/><span class="smallprompt">Only <span class="selectedexample">highlighted items</span> are included in the published data.
 (See the Publish "Max items" setting.)</span>
-<br><br>$pagenav
+<br/><br/>$pagenav
 EOF
          }
 
@@ -2104,7 +2104,7 @@ EOF
 
                   # Apply special transformations
 
-                  $htmlv{itemdesc} =~ s/\n/<br>/g;  # Line breaks are preserved
+                  $htmlv{itemdesc} =~ s/\n/<br/>/g;  # Line breaks are preserved
                   $htmlv{itemdesc} =~ s/\[(http:.+?)\s+(.+?)\]/<a href=\"$1\">$2<\/a>/g; # Wiki-style links
                   $htmlv{itemdesc} =~ s/\[b:(.+?)\]/<b>$1<\/b>/gs; # [b:text] for bold
                   $htmlv{itemdesc} =~ s/\[i:(.+?)\]/<i>$1<\/i>/gs; # [i:text] for italic
@@ -2133,11 +2133,11 @@ EOF
             my $fnsc = special_chars($datavalues{publishfile});
             if ($ok) {
                print RSSFILEOUT $rssstream;
-               $publishstatus .= "Successfully output RSS information to file: $fnsc.<br><br>";
+               $publishstatus .= "Successfully output RSS information to file: $fnsc.<br/><br/>";
                }
             else {
                my $stsc = special_chars("$!");
-               $publishstatus .= qq!<span class="warning">Unable to output RSS information to file: $fnsc.<br>Error status: $stsc</span><br><br>!;
+               $publishstatus .= qq!<span class="warning">Unable to output RSS information to file: $fnsc.<br/>Error status: $stsc</span><br/><br/>!;
                $filefailed = 1;
                }
             close RSSFILEOUT;
@@ -2147,11 +2147,11 @@ EOF
                my $fnsc = special_chars($datavalues{publishhtmlfile});
                if ($ok) {
                   print HTMLFILEOUT $htmlstream;
-                  $publishstatus .= "Successfully output HTML information to file: $fnsc.<br><br>";
+                  $publishstatus .= "Successfully output HTML information to file: $fnsc.<br/><br/>";
                   }
                else {
                   my $stsc = special_chars("$!");
-                  $publishstatus .= qq!<span class="warning">Unable to output HTML information to file: $fnsc.<br>Error status: $stsc</span><br><br>!;
+                  $publishstatus .= qq!<span class="warning">Unable to output HTML information to file: $fnsc.<br/>Error status: $stsc</span><br/><br/>!;
                   $filefailed = 1;
                   }
                close HTMLFILEOUT;
@@ -2193,11 +2193,11 @@ EOF
                   print BACKUPFILEOUT "$vn=$val\n"; 
 
                   }
-               $publishstatus .= "Successful backup to file: $bkupfnlocal.<br><br>" if $datavalues{backuplocalfilename};
+               $publishstatus .= "Successful backup to file: $bkupfnlocal.<br/><br/>" if $datavalues{backuplocalfilename};
                }
             else {
                my $stsc = special_chars("$!");
-               $publishstatus .= qq!<span class="warning">Unable to output backup file: $bkupfnlocal.<br>Error status: $stsc</span><br><br>!;
+               $publishstatus .= qq!<span class="warning">Unable to output backup file: $bkupfnlocal.<br/>Error status: $stsc</span><br/><br/>!;
                $filefailed = 1;
                }
             close BACKUPFILEOUT;
@@ -2218,9 +2218,9 @@ EOF
                else {
                   my $stsc = special_chars("$!");
                   $publishstatus .= <<"EOF";
-<span class="warning">Unable to output RSS information to temp file: $tmpfn.<br>
-Error status: $stsc</span><br>
-Without temp file unable to output RSS information by FTP.<br><br>
+<span class="warning">Unable to output RSS information to temp file: $tmpfn.<br/>
+Error status: $stsc</span><br/>
+Without temp file unable to output RSS information by FTP.<br/><br/>
 EOF
                   $filefailed = 1;
                   }
@@ -2235,9 +2235,9 @@ EOF
                else {
                   my $stsc = special_chars("$!");
                   $publishstatus .= <<"EOF";
-<span class="warning">Unable to output HTML information to temp file: $tmphtmlfn.<br>
-Error status: $stsc</span><br>
-Without temp file unable to output HTML information by FTP.<br><br>
+<span class="warning">Unable to output HTML information to temp file: $tmphtmlfn.<br/>
+Error status: $stsc</span><br/>
+Without temp file unable to output HTML information by FTP.<br/><br/>
 EOF
                   $filefailed = 1;
                   }
@@ -2256,25 +2256,25 @@ EOF
                   my $ok = $ftp->login($datavalues{ftpuser}, $datavalues{ftppassword});
                   $ok = $ftp->cwd("/$datavalues{ftpdirectory}") if $ok;
                   $ok = $ftp->put($tmpfn, $datavalues{ftpfilename}) if $ok;
-                  $publishstatus .= "Successfully output RSS XML file by FTP: $datavalues{ftpfilename}.<br><br>" if $ok;
+                  $publishstatus .= "Successfully output RSS XML file by FTP: $datavalues{ftpfilename}.<br/><br/>" if $ok;
                   $ok = $ftp->cwd("/$datavalues{ftphtmldirectory}") if ($ok && $datavalues{htmlversion});
                   $ok = $ftp->put($tmphtmlfn, $datavalues{ftphtmlfilename}) if ($ok && $datavalues{htmlversion} && $datavalues{ftphtmlfilename});
-                  $publishstatus .= "Successfully output RSS HTML file by FTP: $datavalues{ftphtmlfilename}.<br><br>" if ($ok && $datavalues{htmlversion} && $datavalues{ftphtmlfilename});
+                  $publishstatus .= "Successfully output RSS HTML file by FTP: $datavalues{ftphtmlfilename}.<br/><br/>" if ($ok && $datavalues{htmlversion} && $datavalues{ftphtmlfilename});
                   $ok = $ftp->cwd("/$datavalues{backupftpdirectory}") if ($ok && $doftpbackup);
                   $ok = $ftp->put($bkupfnlocal, $bkupfnftp) if ($ok && $doftpbackup);
-                  $publishstatus .= "Successfully output Backup Data file by FTP: $bkupfnftp.<br><br>" if ($ok && $doftpbackup);
+                  $publishstatus .= "Successfully output Backup Data file by FTP: $bkupfnftp.<br/><br/>" if ($ok && $doftpbackup);
                   if ($ok) {
-                     $publishstatus .= "Successfully output information by FTP.<br><br>";
+                     $publishstatus .= "Successfully output information by FTP.<br/><br/>";
                      }
                   else {
                      my $msgsc = special_chars($ftp->message);
-                     $publishstatus .= qq!<span class="warning">Unable to output information by FTP.<br>Error status: $msgsc.</span><br><br>!;
+                     $publishstatus .= qq!<span class="warning">Unable to output information by FTP.<br/>Error status: $msgsc.</span><br/><br/>!;
                      }
                   $ftp->quit; # Moved to after status output DSB 2005-05-17
                   }
                else {
                   my $msgsc = special_chars("$@");
-                  $publishstatus .= qq!<span class="warning">Unable to output information by FTP.<br>Error status: $msgsc.</span><br><br>!;
+                  $publishstatus .= qq!<span class="warning">Unable to output information by FTP.<br/>Error status: $msgsc.</span><br/><br/>!;
                   }
 
                unlink $ulfn if $ulfn; # delete RSS temp file if created
@@ -2321,21 +2321,21 @@ EOF
 <div class="pagetitle">EDIT PUBLISH INFORMATION:</div>
 <div class="pagefeedinfo">[$rsstitlesc]</div>
 </div>
-<br>
+<br/>
 <div class="sectiondark">
 <div class="title">FTP URL</div>
 <input name="editftpurl" type="text" size="60" value="$htmlvalue{ftpurl}">
 <div class="desc">
 The URL of the FTP host to receive the RSS file.
 Leave blank if not doing FTP publishing.
-<br>Example: ftp.domain.com
+<br/>Example: ftp.domain.com
 </div>
 <div class="title">FTP Filename</div>
 <input name="editftpfilename" type="text" size="60" value="$htmlvalue{ftpfilename}">
 <div class="desc">
 The filename to use when writing the RSS XML data on the server (or nothing if not doing FTP publishing).
 Any existing file is overwritten.
-<br>Example: rss.xml
+<br/>Example: rss.xml
 </div>
 <div class="title">FTP Directory</div>
 <input name="editftpdirectory" type="text" size="60" value="$htmlvalue{ftpdirectory}">
@@ -2343,13 +2343,13 @@ Any existing file is overwritten.
 The directory on the FTP server (or nothing if not doing FTP publishing).
 This is sometimes blank even when doing FTP publishing if the home FTP directory ("/")
 is where you want the file to go.
-<br>Example: htdocs/
+<br/>Example: htdocs/
 </div>
 <div class="title">FTP User</div>
 <input name="editftpuser" type="text" size="60" value="$htmlvalue{ftpuser}">
 <div class="desc">
 The username to use when logging into the FTP server (or nothing if not doing FTP publishing).
-<br>Example: jsmith
+<br/>Example: jsmith
 </div>
 <div class="title">FTP Password</div>
 <input name="editftppassword" type="password" size="60" value="$pwplaceholder">
@@ -2357,7 +2357,7 @@ The username to use when logging into the FTP server (or nothing if not doing FT
 The password to use when logging into the FTP server (or nothing if not doing FTP publishing).
 </div>
 </div>
-<br>
+<br/>
 
 <div class="sectiondark">
 <div class="title">Local Filename</div>
@@ -2366,10 +2366,10 @@ The password to use when logging into the FTP server (or nothing if not doing FT
 The filename (with path, if not in the local directory) to receive the RSS file on the local computer.
 Any existing file is overwritten.
 Leave blank if not doing local publishing.
-<br>Example: rss.xml, or ../data/rss_feed.xml
+<br/>Example: rss.xml, or ../data/rss_feed.xml
 </div>
 </div>
-<br>
+<br/>
 
 <div class="sectiondark">
 <div class="title">Maximum Items</div>
@@ -2378,7 +2378,7 @@ Leave blank if not doing local publishing.
 The maximum number of items to list in the RSS file.
 The items listed in this program and displayed below those first items will be remembered but not put in the RSS file.
 If this field is blank all items will be included.
-<br>Example: 7
+<br/>Example: 7
 </div>
 <div class="title">Minimum Time To Publish Items</div>
 EOF
@@ -2408,7 +2408,7 @@ of the listing order to determine which items are published which may lead to a 
 (all items without a date/time are sequenced after those with one).
 </div>
 </div>
-<br>
+<br/>
 
 <div class="sectiondark">
 <div class="title">Fill In The Following Fields Only If You Want The Optional HTML File</div>
@@ -2425,7 +2425,7 @@ The file is created on the web server using the settings above either by FTP or 
 In either case, a URL is used to access it from outside the web server.
 This program cannot derive the URL just from the FTP/file information and needs to be told
 the actual URL, hence the need for this field.
-<br>Example: http://www.aardvarkproject.com/rss.xml
+<br/>Example: http://www.aardvarkproject.com/rss.xml
 </div>
 <div class="title">HTML FTP Filename</div>
 <input name="editftphtmlfilename" type="text" size="60" value="$htmlvalue{ftphtmlfilename}">
@@ -2433,7 +2433,7 @@ the actual URL, hence the need for this field.
 The filename to use when writing the feed HTML file on the server
 (may be blank if not doing FTP publishing or not producing the optional HTML file).
 Any existing file is overwritten.
-<br>Example: rss.html
+<br/>Example: rss.html
 </div>
 <div class="title">HTML FTP Directory</div>
 <input name="editftphtmldirectory" type="text" size="60" value="$htmlvalue{ftphtmldirectory}">
@@ -2442,7 +2442,7 @@ The directory on the FTP server for the HTML file (or nothing if not doing FTP p
 This is sometimes blank even when doing FTP publishing if the home FTP directory
 is where you want the file to go.
 This must be set if doing FTP publishing of the HTML file even if it is the same as the XML FTP directory.
-<br>Example: htdocs/
+<br/>Example: htdocs/
 </div>
 <div class="title">HTML Local Filename</div>
 <input name="editpublishhtmlfile" type="text" size="60" value="$htmlvalue{publishhtmlfile}">
@@ -2450,13 +2450,13 @@ This must be set if doing FTP publishing of the HTML file even if it is the same
 The filename (with path, if not in the local directory) to receive the HTML file on the local computer.
 Any existing file is overwritten.
 Leave blank if not doing local publishing or not producing the optional HTML file.
-<br>Example: rss.html, or ../status/rss_feed.html
+<br/>Example: rss.html, or ../status/rss_feed.html
 </div>
 <div class="title">HTML Template Above</div>
 <textarea name="edithtmlabove" rows="4" cols="60" wrap="virtual">$htmlvalue{htmlabove}</textarea>
-<br>
+<br/>
 <input name="setdefaultabove" type="checkbox" value="1"><span class="smallprompt">Set to default</span>
-<br>
+<br/>
 <div class="desc">
 The HTML code to be put in the HTML file before the section with the items.
 If blank, a default is used.
@@ -2466,9 +2466,9 @@ rsstitle, rsslink, rssdesc, rsspubdate, rssfileurl, rssfileurlraw (special chara
 </div>
 <div class="title">HTML Template For Each Item</div>
 <textarea name="edithtmlitem" rows="4" cols="60" wrap="virtual">$htmlvalue{htmlitem}</textarea>
-<br>
+<br/>
 <input name="setdefaultitem" type="checkbox" value="1"><span class="smallprompt">Set to default</span>
-<br>
+<br/>
 <div class="desc">
 The HTML code to be put in the HTML file for each item.
 If blank, a default is used.
@@ -2480,9 +2480,9 @@ itempubdate, itemguid, itemnum (in this listing: 1, 2, ...).
 </div>
 <div class="title">HTML Template Below</div>
 <textarea name="edithtmlbelow" rows="4" cols="60" wrap="virtual">$htmlvalue{htmlbelow}</textarea>
-<br>
+<br/>
 <input name="setdefaultbelow" type="checkbox" value="1"><span class="smallprompt">Set to default</span>
-<br>
+<br/>
 <div class="desc">
 The HTML code to be put in the HTML file after the section with the items.
 If blank, a default is used.
@@ -2500,21 +2500,21 @@ This has no effect on the XML RSS file (which is controlled by the Maximum Items
 Minimum Time To Publish Items, and Item Sequence settings above).
 </div>
 </div>
-<br>
+<br/>
 <div class="sectiondark">
 <div class="title">Backup Type</div>
 <input name="editbackuptyperadio" type="radio" value="none"$backuptyperadionone><span class="smallprompt">No backup</span>
 &nbsp; <input name="editbackuptyperadio" type="radio" value="single"$backuptyperadiosingle><span class="smallprompt">Single backup file</span>
 &nbsp; <input name="editbackuptyperadio" type="radio" value="multiple"$backuptyperadiomultiple><span class="smallprompt">Multiple -- a new one each time</span>
-<br>
+<br/>
 <input name="editbackuppasswords" type="checkbox" value="CHECKED" $htmlvalue{backuppasswords}><span class="smallprompt">Include passwords</span>
-<br>
+<br/>
 <div class="desc">
 This determines whether or not to save backup copies of the current feed data at the same time as publishing.
 A single backup will repeatedly save to the same file.
 A multiple backup will save to a new file each time, with a filename that includes the date and time.
 Normally the FTP password values are NOT backed up and will need to be reentered if you use a backup file.
-If you want to save the passwords, too, then check the box.<br><br>
+If you want to save the passwords, too, then check the box.<br/><br/>
 To restore from a backup file, copy it into the directory where you keep the feed data file(s), give it a legal feed filename, and then run this program.
 </div>
 <div class="title">Backup Data FTP Filename</div>
@@ -2522,7 +2522,7 @@ To restore from a backup file, copy it into the directory where you keep the fee
 <div class="desc">
 The filename on the server to receive the Backup Data file by FTP.
 Leave blank if not doing FTP backup.
-The text "backup", the optional date/time (GMT), the feed name, and an extension will be appended to this name.<br>
+The text "backup", the optional date/time (GMT), the feed name, and an extension will be appended to this name.<br/>
 For example, if the filename given here is "rss", then the backup file will be "rss.backup.$config_values{feedname}.txt"
 or "rss.2005-07-26-14-43.backup.$config_values{feedname}.txt".
 </div>
@@ -2534,14 +2534,14 @@ This is sometimes blank even when doing FTP backup if the home FTP directory
 is where you want the file to go.
 This must be set if doing FTP backup even if it is the same as the XML or HTML FTP directories.
 The FTP URL, User, and Password are the same as used for FTP Publish.
-<br>Example: htdocs/
+<br/>Example: htdocs/
 </div>
 <div class="title">Backup Data Local Filename</div>
 <input name="editbackuplocalfilename" type="text" size="60" value="$htmlvalue{backuplocalfilename}">
 <div class="desc">
 The filename (with path, if not in the local directory) to receive the Backup Data file on the local computer.
 Leave blank if not doing local backup.
-The text "backup", the optional date/time (GMT), the feed name, and an extension will be appended to this name.<br>
+The text "backup", the optional date/time (GMT), the feed name, and an extension will be appended to this name.<br/>
 For example, if the filename given here is "rss", then the backup file will be "rss.backup.$config_values{feedname}.txt"
 or "rss.2005-07-26-14-43.backup.$config_values{feedname}.txt".
 Another example value would be "../status/rss_feed".
@@ -2568,7 +2568,7 @@ EOF
          $response .= <<"EOF";
 <div class="pagetitle">PUBLISH RSS FEED:</div>
 <div class="pagefeedinfo">[$rsstitlesc]</div>
-<br>
+<br/>
 EOF
 
          if ($datavalues{ftpurl} && $datavalues{publishfile}) {
@@ -2731,7 +2731,7 @@ var setf = function() {document.f1.editoptionsmaxsaved.focus();}
 <div class="pagetitle">EDIT FEED OPTIONS:</div>
 <div class="pagefeedinfo">[$rsstitlesc]</div>
 </div>
-<br>
+<br/>
 <div class="sectiondark">
 <div class="title">Maximum Items Saved</div>
 <input name="editoptionsmaxsaved" type="text" size="60" value="$htmlvalue{optionsmaxsaved}">
@@ -2786,7 +2786,7 @@ If the length of the description is generally long, you may want a larger value;
 if the length is generally short, then you may want a smaller value.
 </div>
 </div>
-<br>
+<br/>
 
 <div class="sectiondark">
 <div class="title">Item Title Template</div>
@@ -2827,16 +2827,16 @@ report the correct value. (If blank, this program tries to determine the type au
 </div>
 <div class="title">Item PubDate Template</div>
 <input name="edittemplatepubdate" type="text" size="60" value="$htmlvalue{templatepubdate}">
-<br><input name="edittemplatepubdateusecurrent" type="checkbox" value=" CHECKED"$htmlvalue{templatepubdateusecurrent}><span class="smallprompt">Set to current time</span>
+<br/><input name="edittemplatepubdateusecurrent" type="checkbox" value=" CHECKED"$htmlvalue{templatepubdateusecurrent}><span class="smallprompt">Set to current time</span>
 <div class="desc">
 The initial value for the date/time when the item was published.
 If the box is checked, the current time will be used when you press "Save" for a new added item.
-The final field's format must be: "Day, monthday Month year hour:min:sec GMT",<br>(e.g., Wed, 08 Oct 2003 19:29:11 GMT)
+The final field's format must be: "Day, monthday Month year hour:min:sec GMT",<br/>(e.g., Wed, 08 Oct 2003 19:29:11 GMT)
 </div>
 <div class="title">Item GUID Template</div>
-<input name="edittemplateguid" type="text" size="60" value="$htmlvalue{templateguid}"><br>
+<input name="edittemplateguid" type="text" size="60" value="$htmlvalue{templateguid}"><br/>
 <input name="edittemplateguidispermalink" type="checkbox" value="CHECKED" $htmlvalue{templateguidispermalink}><span class="smallprompt">isPermaLink</span>
-<br>
+<br/>
 <span class="smallprompt"><b>If blank:</b></span> <input name="edittemplateguidradio" type="radio" value="link"$guidradiolink><span class="smallprompt">Set to link</span>
 &nbsp; <input name="edittemplateguidradio" type="radio" value="auto"$guidradioauto><span class="smallprompt">Create</span>
 &nbsp; <input name="edittemplateguidradio" type="radio" value="none"$guidradionone><span class="smallprompt">Leave blank</span>
@@ -2857,7 +2857,7 @@ This text will be the initial value for the Item Additional XML field when a new
 Normally left blank, it may be used to add XML to use as is or to be edited (e.g., "&lt;itunes:keywords&gt;words&lt;/itunes:keywords&gt;").
 </div>
 </div>
-<br>
+<br/>
 
 <div class="sectiondark">
 <div class="title">RSS Tag Additional Text</div>
@@ -2898,7 +2898,7 @@ EOF
 <div class="pagetitle">FEED OPTIONS:</div>
 <div class="pagefeedinfo">[$rsstitlesc]</div>
 </div>
-<br>
+<br/>
 $loadfeedsettingsstr
 EOF
 
@@ -2914,7 +2914,7 @@ EOF
          $htmlvalue{templateguidradio} = "Set to link" if $htmlvalue{templateguidradio} eq 'link';
          $htmlvalue{templateguidradio} = "Create" if $htmlvalue{templateguidradio} eq 'auto';
          $htmlvalue{templateguidradio} = "Leave blank" if ($htmlvalue{templateguidradio} eq 'none' || !$htmlvalue{templateguidradio});
-         $htmlvalue{templateaddlxml} =~ s/\n/<br>/g;
+         $htmlvalue{templateaddlxml} =~ s/\n/<br/>/g;
 
          $htmlvalue{displaytitle} = "Title" if ($datavalues{displaytitle} || !defined $datavalues{displaytitle});
          $htmlvalue{displaylink} = "Link" if ($datavalues{displaylink} || !defined $datavalues{displaylink});
@@ -2966,8 +2966,8 @@ EOF
             $response .= <<"EOF" if $datavalues{rsstagaddltext};
 <tr><td width="150"><b>RSS Tag Additional Text:</b></td><td>$htmlvalue{rsstagaddltext}</td></tr>
 EOF
-            $htmlvalue{channeladdlxml} =~ s/\n/<br>/g; # make look like the text in HTML
-            $htmlvalue{channeladdlxml} =~ s/<br> /<br>&nbsp;/g;
+            $htmlvalue{channeladdlxml} =~ s/\n/<br/>/g; # make look like the text in HTML
+            $htmlvalue{channeladdlxml} =~ s/<br/> /<br/>&nbsp;/g;
             $htmlvalue{channeladdlxml} =~ s/  / &nbsp;/g;
             $response .= <<"EOF" if $datavalues{channeladdlxml};
 <tr><td width="150"><b>Channel Additional XML:</b></td><td>$htmlvalue{channeladdlxml}</td></tr>
@@ -2988,26 +2988,26 @@ EOF
 <input type="hidden" name="securitycode" value="$securitycode">
 <input type="hidden" name="currenttab" value="$currenttab">
 <input type="hidden" name="feedname" value="$config_values{feedname}">
-<br>
+<br/>
 <div class="sectiondark">
 <div class="title">Load Feed Settings From URL</div>
 <input name="loadfeedsettingsurl"  type="text" size="60" value="">
 <input name="loadfeedsettings" type="submit" value="Load"
 onclick="return window.confirm('Overwrite feed settings and data with contents of '+document.fload.loadfeedsettingsurl.value+'?')">
 <div class="desc">
-URL<br><br>
+URL<br/><br/>
 Websites that provide support for this program may have specially constructed files to load settings as part of examples,
 especially the Options values and the Publish HTML File Template settings.
 This will save you the tedium of typing in many values or long strings of HTML or XML code and is especially helpful
 for setting up a podcast RSS feed with an Optional HTML file or additional XML information in the feed.
 Enter the URL of such a file (it usually starts with "http://" and has a ".txt" extension) and press Load to overwrite the current
-feed values with those set in that file.<br><br>
+feed values with those set in that file.<br/><br/>
 Note: This is not for loading data from an RSS file.
 It should only be done from websites you trust and you should examine the results carefully.
 </div>
 </div>
 </form>
-<br>
+<br/>
 EOF
          }
 
@@ -3025,7 +3025,7 @@ EOF
 <div class="sectiondark">
 $sgilicensetext
 </div>
-<br>
+<br/>
 <div class="sectiondark">
 $gpllicensetext
 </div>
@@ -3057,13 +3057,13 @@ EOF
    $response .= <<"EOF";
 <tr><td>
 <div class="footer">
-$time_string<br><br>
+$time_string<br/><br/>
 pRSSlist Copyright (c) 2009, lantrix, <a href="http://techdebug.com">TechDebug</a>
-<br>Original Software (c) Copyright 2004, 2005 <a href="http://www.softwaregarden.com">Software Garden</a>, Inc. All Rights Reserved.
+<br/>Original Software (c) Copyright 2004, 2005 <a href="http://www.softwaregarden.com">Software Garden</a>, Inc. All Rights Reserved.
 EOF
 
    $response .= <<"EOF";
-<br><br>
+<br/><br/>
 <form name="fsl" action="" method="POST">
 <input type="hidden" name="securitycode" value="$securitycode">
 <input type="hidden" name="currenttab" value="$currenttab">
@@ -3136,7 +3136,7 @@ sub special_chars {
 sub expand_desc {
    my $string = shift @_;
 
-   $string =~ s/\n/<br>/g;  # Line breaks are preserved
+   $string =~ s/\n/<br/>/g;  # Line breaks are preserved
    $string =~ s/\[(http:.+?)\s+(.+?)\]/<a href=\"$1\">$2<\/a>/g; # Wiki-style links
    $string =~ s/\[b:(.+?)\]/<b>$1<\/b>/gs; # [b:text] for bold
    $string =~ s/\[i:(.+?)\]/<i>$1<\/i>/gs; # [i:text] for italic
