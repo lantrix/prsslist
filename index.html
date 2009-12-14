@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>lantrix/prsslist @ GitHub</title>
+	
+	<style type="text/css">
+		body {
+  		margin-top: 1.0em;
+  		background-color: #DDE5D9;
+		  font-family: "Helvetica,Arial,FreeSans"; 
+  		color: #000000;
+    }
+    #container {
+      margin: 0 auto;
+      width: 700px;
+    }
+		h1 { font-size: 3.8em; color: #221a26; margin-bottom: 3px; }
+		h1 .small { font-size: 0.4em; }
+		h1 a { text-decoration: none }
+		h2 { font-size: 1.5em; color: #221a26; }
+    h3 { text-align: center; color: #221a26; }
+    a { color: #221a26; }
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    .download { float: right; }
+		pre { background: #000; color: #fff; padding: 15px;}
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .footer { text-align:center; padding-top:30px; font-style: italic; }
+	</style>
+	
+</head>
+
+<body>
+  <a href="http://github.com/lantrix/prsslist"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/lantrix/prsslist/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/lantrix/prsslist/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+      
+    <h1><a href="http://github.com/lantrix/prsslist">pRSSlist</a> 
+      <span class="small">by <a href="http://github.com/lantrix">lantrix</a></span></h1>
+
+    <div class="description">
+      The pRSSlist program is a Perl application for creating and maintaining RSS feeds. It is an easy to use open source authoring tool operated with a browser interface that can run locally on a computer running Mac OS X, or Linux, or accessed remotely through a web server. The product is available as Open Source software under the GNU GPLv2 license for no charge. This is a fork of ListGarden™ v1.3.1 software from Software Garden Inc.
+    </div>
+
+    <p>h1. Why pRSSlist?
+
+I used ListGarden™ but found it needed some changes, and the easiest thing to do was maintain my own copy. pRSSlist was born from a fork of v1.3.1 of ListGarden™ v1.3.1 software from Software Garden Inc.
+
+Github is the perfect social coding platform to host pRSSlist on.
+
+h1. Use of pRSSlist
+
+"Setting Up an RSS Feed for Podcasting":http://www.softwaregarden.com/products/listgarden/podcasting.html
+This page gives step-by-step instructions for using prsslist (in its previous incarnation known as ListGarden) to create an RSS feed for a podcast so that listeners can subscribe and automatically download new episodes when they are available. It also shows how to automatically create a companion "List of Shows" HTML page.
+
+"Adding an RSS feed to a normal website":http://www.softwaregarden.com/products/listgarden/websiterss.html
+This page gives step-by-step instructions for using prsslist (in its previous incarnation known as ListGarden) to add an RSS feed to a normal website.
+
+"Example Of A Simple Online List":http://www.softwaregarden.com/products/listgarden/example1.html
+This page presents an example of using prsslist (in its previous incarnation known as ListGarden) to maintain and distribute a simple list.
+
+"Storing RSS on inexpensive web server space":http://www.softwaregarden.com/products/listgarden/rssstorage.html
+This page gives gives examples of storing public RSS feed files on inexpensive web server storage available through many ISPs and free web hosting communities.</p><h2>Dependencies</h2>
+<p>The *system requirements* are: Internet connection if uploading the RSS files by FTP, 200KB+ disk space, Perl language system that includes the library modules:
+* LWP::UserAgent
+* Net::FTP
+* Time::Local.</p>
+<h2>Install</h2>
+<p>p(#big-red). This page tells you how to install and run the Generic Perl Version on Linux and similar systems as well as on a [[Web Server]]. If you want you can also read the [[Installation On Mac OS X]].
+
+h1. INTRODUCTION
+
+The prsslist program is written in the Perl computer language. In order to run, it requires a copy of the Perl language system which is commonly found preinstalled on most Linux and similar systems, as well as on most web servers.
+
+This page is oriented towards users with technical experience who are comfortable with configuring and running programs from the command line or setting up web CGI programs.
+
+The *system requirements* are: Internet connection if uploading the RSS files by FTP, 200KB+ disk space, Perl language system that includes the library modules:
+* LWP::UserAgent
+* Net::FTP
+* Time::Local.
+
+h1. USING IT ON YOUR SYSTEM
+
+h2. Installation
+
+Follow these instructions to install and run prsslist:
+
+* Make sure that you have Perl installed on your system. When you have Perl installed, you can run Perl programs from the command line by executing "??perl programfile??" or if you are running a web server, by serving a Perl program whose permission is set to "??Execute??". You can check that Perl is installed and see the version information by executing the command ??perl -v??.
+* Read the [[License Agreement]] to make sure that you understand the restrictions and rights that apply to this program. The source code is covered by the "GNU GPLv2":http://www.gnu.org/licenses/gpl-2.0.txt. The Generic Perl Version is available for free and comes with no warranty of any kind.
+* If you do not agree to the above license, do not download or use the program.* You may not use or copy the program except under terms of the license.
+* Download the Local Generic Perl Version from the "Downloads page":http://github.com/lantrix/prsslist/downloads, or use git to clone the latest version by following these steps
+<pre>
+<code>
+git clone git://github.com/lantrix/prsslist.git
+</code>
+</pre>
+* You run the program locally by extracting the download and executing the commands:
+<pre>
+<code>
+cd prsslist
+perl prsslist.pl option values
+</code>
+</pre>
+* You can get a list of options by using the "-h" option. When executing the program, you can exit before it's finished by pressing Ctrl-C.
+
+h2. Using the program
+
+After you start the program running, you interact with it by accessing the URL it lists. By default, you need to open the following local URL with your browser:
+
+http://127.0.0.1:6555
+You normally quit by using the "Quit" command in the user interface.
+
+Only the following files are needed for local execution. All others may be deleted.
+
+* prsslist.pl
+* prsslist.pm
+* prsslistLicense.pm
+
+prsslist maintains one or more files locally to save all the feed information. By default, those files are stored in the current directory. The files are named "prefix.feed.name.txt", where "prefix" is "listdata" by default and "name" is a name you give to each feed when you create it (for example, "listdata.feed.dblog.txt"). The *-d string* option can be used to set a different datafile prefix than the default "listdata". The prefix may include path information to use a different directory, e.g., "~/prsslist/data/feeddata".
+
+h2. Troubleshooting
+
+If the program displays an error message when run complaining about a missing module, such as LWP, or LWP::UserAgent, you can get the missing module from CPAN. Most Perl installations include the CPAN.pm module to automate this downloading process. You can "seek further help":http://lmgtfy.com/?q=CPAN.pm+how+to+use to get an idea how to use CPAN.pm. CPAN.pm documentation should be available on your computer by using the command "perldoc CPAN".
+
+h2. Uninstall
+
+Delete the directory created when you cloned the git repository.
+</p>
+<h2>License</h2>
+<p>h1. SOFTWARE LICENSE
+
+pRSSlist Copyright (c) 2009, lantrix, TechDebug.com
+Original software and documentation is Copyright (c) 2004, 2005 Software Garden, Inc. All rights reserved.
+
+# The source code of this program is made available as free software; you can redistribute it and/or modify it under the terms of the GNU General Public License, version 2, as published by the Free Software Foundation.
+# This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# An appropriate copyright notice will include the original Software Garden, Inc.Inc. copyright plus the pRSSlist copyright, and a prominent change notice will include a reference to Software Garden, Inc., as the originator of the code to which the changes were made. 
+
+*Disclaimer*
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Original Software Creator: Software Garden, Inc. PO Box 610369 Newton Highlands, MA 02461 USA www.softwaregarden.com</p>
+<h2>Authors</h2>
+<p>lantrix (lantrix@pobox.com)<br/><br/>      </p>
+<h2>Contact</h2>
+<p>http://techdebug.com (lantrix@pobox.com)<br/>      </p>
+
+
+    <h2>Download</h2>
+    <p>
+      You can download this project in either
+      <a href="http://github.com/lantrix/prsslist/zipball/master">zip</a> or
+      <a href="http://github.com/lantrix/prsslist/tarball/master">tar</a> formats.
+    </p>
+    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+      by running:
+      <pre>$ git clone git://github.com/lantrix/prsslist</pre>
+    </p>
+      
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/lantrix/prsslist">lantrix/prsslist</a>
+    </div>
+    
+  </div>
+
+  
+</body>
+</html>
