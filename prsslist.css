@@ -1,3 +1,5 @@
+/* @override http://lantrix.github.com/prsslist/prsslist.css */
+
 body {
 	margin-top: 1.0em;
 	background-color: #DDE5D9;
@@ -7,13 +9,13 @@ body {
 
 #container {
 	margin: 0 auto;
-	width: 700px;
+	width: 600px;
 }
 
 h1 {
-	font-size: 3.8em;
 	color: #221a26;
 	margin-bottom: 3px;
+	font-size: x-large;
 }
 
 h1 .small {
