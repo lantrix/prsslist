@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-	color: #221a26;
+	color: olive;
 	margin-bottom: 3px;
 	font-size: x-large;
 }
@@ -55,6 +55,7 @@ pre {
 	background: #000;
 	color: #fff;
 	padding: 15px;
+	text-align: left;
 }
 
 hr {
