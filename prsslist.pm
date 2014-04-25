@@ -3195,10 +3195,14 @@ sub time_delta {
    $gmt = lc $gmt;
 
    if (!$daynames{$day} || $mday < 1 || $mday > 31 || !exists($monthnames{$monname}) || $year < 1900 ||
-         $hour < 0 || $hour > 23 || $min < 0 || $min > 59 || $sec < 0 || $sec > 59 || $gmt ne 'gmt') {
+         $hour < 0 || $hour > 23 || $min < 0 || $min > 59 || $sec < 0 || $sec > 59) {
       return;
       }
 
+   #All date-times in RSS conform to the Date and Time Specification of RFC 822
+   #Time zone may be indicated in several ways
+   return unless ($gmt =~ m/(gmt|ut|est|edt|cst|cdt|mst|mdt|pst|pdt|[a-i]|[k-z])/);
+   
    my $thenseconds = Time::Local::timegm($sec, $min, $hour, $mday, $monthnames{$monname}, $year-1900);
    my $delta = $now - $thenseconds;
 
