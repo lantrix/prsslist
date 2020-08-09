@@ -1501,6 +1501,7 @@ EOF
 
          my $ua = LWP::UserAgent->new;
          $ua->agent($programname);
+         $ua->ssl_opts( verify_hostname => 0 );
 
          my $req = HTTP::Request->new(HEAD => $url);
          $req->header('Accept' => '*/*');
